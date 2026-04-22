@@ -2,7 +2,7 @@
 
 A public, sanitized template for building an **LLM-native Obsidian knowledge vault** inspired by Andrej Karpathy's **LLM Wiki** idea: raw source material is kept separate from a curated wiki layer, and optional knowledge-graph outputs are generated into a dedicated `graphify-out/` area.
 
-This repository is a **knowledge-base architecture and workflow template**, not a graph-extraction engine. It can integrate with external tools such as `graphify`, but those tools are not bundled or claimed as original work here. This project is not affiliated with Andrej Karpathy; it applies the LLM Wiki philosophy to an Obsidian-based personal knowledge system.
+This repository is a **knowledge-base architecture and workflow template**, not a graph-extraction engine. It can integrate with external tools such as `graphify`, but those tools are not bundled or claimed as original work here. The high-level LLM Wiki philosophy is credited to Andrej Karpathy; this repository is an independent Obsidian-based implementation and workflow template, with no affiliation or endorsement.
 
 ## Why this exists
 
