@@ -11,6 +11,8 @@ PATTERNS = {
     "api_key_like": re.compile(r"(?i)(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]?[^\s'\"]+"),
     "email": re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
     "private_owner_name_example": re.compile("Guo" + "huaiyu", re.IGNORECASE),
+    "private_owner_alias_example": re.compile("Ho" + "wie", re.IGNORECASE),
+    "private_course_code_example": re.compile("US" + "C|CS" + "CI|DS" + "CI", re.IGNORECASE),
 }
 
 SKIP_DIRS = {".git", "node_modules", "__pycache__"}

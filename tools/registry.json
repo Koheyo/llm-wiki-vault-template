@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Machine-readable registry for LLM Wiki vault tools that an AI assistant can route from natural-language requests.",
+  "routing_policy": {
+    "read_before_dispatch": [
+      "AGENTS.example.md",
+      "tools/registry.json"
+    ],
+    "default_working_directory": ".",
+    "dry_run_first_when_supported": true,
+    "append_log_after_writes": true,
+    "do_not_update_wiki_index_for_tools": true,
+    "do_not_git_init_private_vault": true,
+    "ask_learning_mode_before_study": true,
+    "learning_mode_prompt": "A Live slide tutor; B Auto detailed walkthrough; C Key-slide walkthrough; D Exam review; E Algorithm-first",
+    "guided_teaching_active_trigger_only": true,
+    "do_not_auto_start_guided_teaching_after_ingest": true
+  },
+  "tools": [
+    {
+      "id": "pptx_visual_ingest",
+      "name": "PPTX/PDF Visual Ingest",
+      "status": "template",
+      "path": "tools/pptx_visual_ingest",
+      "entrypoint": "tools/pptx_visual_ingest/pipeline.py",
+      "description": "Render PPTX/PDF lecture decks into fixed-layout PDFs, slide images, extracted text, and Obsidian visual digest Markdown pages.",
+      "best_for": [
+        "lecture deck ingest",
+        "slide images",
+        "visual digest pages",
+        "PDF-first rendering"
+      ],
+      "commands": {
+        "dry_run": "python3 tools/pptx_visual_ingest/pipeline.py --config {config} --dry-run",
+        "all": "python3 tools/pptx_visual_ingest/pipeline.py --config {config} --all",
+        "extract_text": "python3 tools/pptx_visual_ingest/pipeline.py --config {config} --extract-text",
+        "render": "python3 tools/pptx_visual_ingest/pipeline.py --config {config} --render",
+        "digest": "python3 tools/pptx_visual_ingest/pipeline.py --config {config} --digest"
+      },
+      "verification": [
+        "validate config JSON",
+        "dry-run before first run",
+        "check slide image count",
+        "verify Markdown frontmatter",
+        "verify image embeds"
+      ]
+    },
+    {
+      "id": "course_material_learning_flow",
+      "name": "Course Material Learning Flow",
+      "status": "template",
+      "path": "tools/course_material_learning_flow",
+      "entrypoint": "tools/course_material_learning_flow/README.md",
+      "type": "meta_workflow",
+      "description": "Orchestrate ingest, lecture summary, concept linking, learning-mode selection, review packs, cheat sheets, and quizzes.",
+      "depends_on": [
+        "pptx_visual_ingest",
+        "slide_guided_review"
+      ]
+    },
+    {
+      "id": "slide_guided_review",
+      "name": "Slide Guided Review",
+      "status": "template",
+      "path": "tools/slide_guided_review",
+      "entrypoint": "tools/slide_guided_review/README.md",
+      "description": "Generate live tutor notes, auto detailed walkthroughs, key-slide explanations, exam reviews, and algorithm-first slide explanations from rendered slide images.",
+      "depends_on": [
+        "pptx_visual_ingest"
+      ]
+    }
+  ]
+}

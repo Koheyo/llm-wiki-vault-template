@@ -46,6 +46,19 @@ cp ../template-vault/wiki/summaries/example-summary.md wiki/summaries/my-summary
 python ../tools/lint_wiki.py .
 ```
 
+
+
+## Included workflow templates
+
+This repo includes sanitized, reusable versions of the most valuable workflows from the private vault:
+
+- `tools/pptx_visual_ingest/` — PDF-first PPTX/PDF slide ingest: render slides to images, extract text, and generate visual digest pages.
+- `tools/course_material_learning_flow/` — orchestration playbook for turning course material into summaries, concept pages, review packs, cheat sheets, and quizzes.
+- `tools/slide_guided_review/` — guided learning layer for live slide tutoring, auto detailed walkthroughs, key-slide review, exam review, and algorithm-first explanation.
+- `tools/registry.json` — machine-readable routing metadata so an AI assistant can select workflows from natural-language requests.
+
+See [docs/pptx-slide-ingest-workflow.md](docs/pptx-slide-ingest-workflow.md) and [docs/learning-workflow.md](docs/learning-workflow.md).
+
 ## Optional graph workflow
 
 If you use an external graph builder such as `graphify`, write outputs to `graphify-out/` and keep generated files out of hand-authored notes. See [docs/graphify-integration.md](docs/graphify-integration.md) for the safety rules.

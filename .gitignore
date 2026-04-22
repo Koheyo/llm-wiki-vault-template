@@ -37,3 +37,7 @@ venv/
 .env.*
 *.pem
 *.key
+# Tool-local generated files
+**/__pycache__/
+**/tools/**/graphify-out/
+**/tools/**/configs/*private*.json

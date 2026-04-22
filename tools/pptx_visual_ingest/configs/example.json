@@ -1,0 +1,37 @@
+{
+  "vault_root": ".",
+  "course_id": "example-course",
+  "course_title": "Example Course",
+  "source_root": "/absolute/path/to/lecture/decks",
+  "pptx_glob": "**/*.pptx",
+  "asset_root": "wiki/assets/example-course-slides",
+  "raw_text_root": "raw/clips/example-course-slides",
+  "raw_pdf_root": "raw/pdfs/example-course-slides",
+  "summary_root": "wiki/summaries",
+  "summary_prefix": "example-course-lecture",
+  "course_hub": "wiki/entities/example-course",
+  "copy_original_pptx": false,
+  "render_method": "pdf_first",
+  "soffice_path": "/Applications/LibreOffice.app/Contents/MacOS/soffice",
+  "pdf_exporter": "libreoffice",
+  "pdf_export_filter": "pdf:impress_pdf_Export",
+  "pdf_render_dpi": 180,
+  "tags": [
+    "course/example"
+  ],
+  "decks": [
+    {
+      "pptx": "week-01/introduction.pptx",
+      "slug": "week-01-introduction",
+      "summary_slug": "example-course-lecture-01-introduction",
+      "title": "Example Course Lecture 01 \u2014 Introduction",
+      "tags": [
+        "course/example"
+      ],
+      "related": [
+        "[[wiki/entities/example-course]]"
+      ]
+    }
+  ],
+  "include_absolute_source": false
+}
