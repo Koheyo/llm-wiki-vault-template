@@ -1,0 +1,39 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Obsidian local state
+.obsidian/workspace*.json
+.obsidian/cache/
+.trash/
+
+# Private vault content that should not be committed in derived repos
+raw/**/*.pdf
+raw/**/*.pptx
+raw/**/*.docx
+raw/**/*.xlsx
+raw/**/*.png
+raw/**/*.jpg
+raw/**/*.jpeg
+raw/**/*.webp
+Attachments/
+legacy/
+
+# Generated graph artifacts: keep reports/examples only if explicitly sanitized
+**/graphify-out/**/*.json
+**/graphify-out/**/*.html
+**/graphify-out/**/cache/
+**/graphify-out/**/cost.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env / secrets
+.env
+.env.*
+*.pem
+*.key
